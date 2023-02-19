@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    // задание полей
     @SuppressWarnings("FieldCanBeLocal")
-    int telescsopePrice = 14000; //стоимость телескопа
-    int scholarship = 2500;   //стипендия (ежемесячная)
-    float accountBalance = 1000;  // кол-во денег на счету
+    int telescsopePrice = 14000; 
+    int scholarship = 2500;  
+    float accountBalance = 1000;  
 
-    float p = 5;  //годовые (в процентах)
+    float p = 5;  
     int months = 0;
 
 
@@ -30,24 +29,18 @@ public class MainActivity extends AppCompatActivity {
         return months;
     }
 
-    // создание дополнительных  полей для вывода на экран полученных значений
-    private TextView textNumberOfMonths; // поле отображение числа месяцев
-    private TextView priceOut; // поле отображения цены
+    private TextView textNumberOfMonths; 
+    private TextView priceOut;
 
-    // вывод на экран полученных значений
     @Override
-    protected void onCreate(Bundle savedInstanceState) { // создание жизненного цикла активности
+    protected void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // присваивание жизненному циклу активити представления activity_main
+        setContentView(R.layout.activity_main); 
 
-        // присваивание переменным активити элементов представления activity_main
         priceOut = findViewById(R.id.priceOut);
-        textNumberOfMonths = findViewById(R.id.textNumberOfMonths); // вывод информации по количеству месяцев
+        textNumberOfMonths = findViewById(R.id.textNumberOfMonths); 
 
-        // заполнение экрана
-        // вывод стоимость покупки
         priceOut.setText("Стоимость покупки данного телескопа составит " + telescsopePrice + " кредитов");
-        // вывод количества месяцев
         textNumberOfMonths.setText("Для покупки данного телескопа потребуется копить на протяжении " + countOfMonths() + " месяцев");
     }
 }
